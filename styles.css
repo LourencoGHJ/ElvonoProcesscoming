@@ -813,3 +813,332 @@ html, body {
 .fa-spinner {
     animation: spin 1s linear infinite;
 }
+
+
+        /* Estilo para animação dos números */
+        .countdown-item span {
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #00bfff;
+            display: inline-block;
+            width: 5rem;
+            text-align: center;
+            line-height: 1;
+            margin: 0 0.5rem;
+        }
+        
+        .countdown-item .label {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            width: auto;
+            color: #ffffff;
+        }
+        
+        .number-change {
+            animation: numberPulse 0.3s ease-in-out;
+            color: #00ffff !important;
+        }
+        
+        @keyframes numberPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Garantir que a contagem regressiva fique alinhada */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 1rem;
+        }
+        
+        /* Estilos responsivos para dispositivos móveis */
+        @media (max-width: 768px) {
+            .countdown {
+                margin: 1.5rem 0;
+            }
+            
+            .countdown-item span {
+                font-size: 2.2rem;
+                width: 3.5rem;
+                margin: 0 0.3rem;
+            }
+            
+            .countdown-item .label {
+                font-size: 0.8rem;
+            }
+            
+            .countdown-item {
+                margin: 0 0.5rem;
+            }
+        }
+        
+        /* Estilos para dispositivos muito pequenos */
+        @media (max-width: 480px) {
+            .countdown {
+                margin: 1rem 0;
+            }
+            
+            .countdown-item span {
+                font-size: 1.8rem;
+                width: 2.8rem;
+                margin: 0 0.2rem;
+            }
+            
+            .countdown-item .label {
+                font-size: 0.7rem;
+            }
+            
+            .countdown-item {
+                margin: 0 0.3rem;
+            }
+        }
+        
+        /* Estilos para dispositivos extremamente pequenos */
+        @media (max-width: 320px) {
+            .countdown-item span {
+                font-size: 1.5rem;
+                width: 2.2rem;
+            }
+        }
+
+/* Melhorias para dispositivos móveis - 2024 */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Melhora o desempenho em dispositivos móveis */
+        background-position: center center;
+        background-size: cover;
+    }
+    
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro para melhor contraste */
+    }
+    
+    .container {
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+    }
+    
+    /* Melhoria na visualização do contador */
+    .countdown-item span:first-child {
+        font-size: 2.5rem;
+        background: linear-gradient(90deg, #00bfff 0%, #00ffff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 8px rgba(0, 191, 255, 0.5);
+        font-weight: 700;
+    }
+    
+    /* Efeito de brilho para os números */
+    @keyframes glow {
+        0% { text-shadow: 0 0 5px rgba(0, 191, 255, 0.5); }
+        50% { text-shadow: 0 0 15px rgba(0, 255, 255, 0.8); }
+        100% { text-shadow: 0 0 5px rgba(0, 191, 255, 0.5); }
+    }
+    
+    .countdown-item span:first-child {
+        animation: glow 3s infinite;
+    }
+}
+
+/* Otimizações específicas para iPhone e Android */
+@media (max-width: 480px) {
+    body {
+        background-position: center center;
+        overflow-y: auto; /* Permitir rolagem vertical se necessário */
+        height: auto;
+        min-height: 100vh;
+        position: relative;
+    }
+    
+    .container {
+        padding: 1rem 0.8rem;
+        height: auto;
+    }
+    
+    /* Melhorar a visualização do fundo */
+    .overlay {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+    }
+    
+    /* Ajustes para o contador */
+    .countdown {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 15px;
+        padding: 1rem 0.5rem;
+        margin: 1rem 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+    }
+    
+    .countdown-item {
+        margin: 0 0.4rem;
+        position: relative;
+    }
+    
+    .countdown-item::after {
+        width: 25px;
+        height: 2px;
+        bottom: -8px;
+        background: linear-gradient(90deg, #00bfff 0%, #00ffff 100%);
+    }
+    
+    /* Melhorar a newsletter */
+    .newsletter {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(79, 172, 254, 0.2);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        padding: 1.2rem 1rem;
+    }
+    
+    input[type="email"] {
+        background-color: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(79, 172, 254, 0.3);
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        font-size: 1rem;
+        padding: 0.9rem 1.2rem;
+    }
+    
+    button {
+        background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
+        font-weight: 600;
+    }
+    
+    /* Melhorar a visualização das formas animadas */
+    .shape {
+        filter: blur(30px);
+    }
+    
+    /* Ajustes para orientação paisagem em dispositivos móveis */
+    @media (orientation: landscape) {
+        .container {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .countdown {
+            margin: 0.8rem 0;
+            padding: 0.5rem;
+        }
+        
+        .newsletter {
+            margin: 0.8rem 0;
+            padding: 0.8rem;
+        }
+        
+        footer {
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+/* Otimizações para dispositivos de alta resolução (iPhone Pro, Galaxy S, etc) */
+@media (max-width: 480px) and (min-resolution: 2dppx) {
+    body {
+        background-size: cover;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    /* Melhorar a aparência dos botões */
+    button {
+        background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+        border-radius: 30px;
+        padding: 0.9rem 1.5rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+    }
+    
+    button:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 8px rgba(0, 114, 255, 0.4);
+    }
+    
+    /* Melhorar a aparência dos ícones sociais */
+    .social-icon {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .social-icon:active {
+        transform: scale(0.95);
+        background: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    }
+}
+
+/* Correções para dispositivos iOS específicos */
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll; /* Corrige problemas de background-attachment: fixed no iOS */
+        height: -webkit-fill-available;
+    }
+    
+    html {
+        height: -webkit-fill-available;
+    }
+    
+    .container {
+        min-height: -webkit-fill-available;
+    }
+    
+    /* Melhorar a aparência dos inputs no iOS */
+    input[type="email"] {
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 30px;
+    }
+    
+    /* Corrigir problemas de backdrop-filter no iOS */
+    .newsletter, .countdown {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Melhorias para dispositivos com notch (iPhone X e mais recentes) */
+@media screen and (orientation: portrait) and (max-width: 480px) and (min-height: 800px) {
+    .container {
+        padding-top: env(safe-area-inset-top, 1rem);
+        padding-bottom: env(safe-area-inset-bottom, 1rem);
+        padding-left: env(safe-area-inset-left, 0.8rem);
+        padding-right: env(safe-area-inset-right, 0.8rem);
+    }
+    
+    header {
+        margin-top: 0.5rem;
+    }
+    
+    footer {
+        margin-bottom: 0.5rem;
+    }
+}
