@@ -914,25 +914,76 @@ html, body {
             }
         }
 
-/* Melhorias para dispositivos móveis - 2024 */
+/* Otimização para dispositivos móveis - Correção 2024 */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll; /* Melhora o desempenho em dispositivos móveis */
         background-position: center center;
         background-size: cover;
+        overflow-y: auto;
+        height: auto;
+        position: relative;
+    }
+    
+    html, body {
+        overflow: auto;
+        position: relative;
+        height: 100%;
     }
     
     .overlay {
         background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro para melhor contraste */
+        position: fixed;
     }
     
     .container {
         width: 100%;
         padding: 1rem;
+        min-height: 100vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 100vh;
+    }
+    
+    .logo-text {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+        margin-bottom: 0.5rem;
+        display: block;
+        width: 100%;
+    }
+    
+    .logo-container {
+        width: 100%;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .content {
+        width: 100%;
+        padding: 0 0.5rem;
+        margin: 1rem 0;
+    }
+    
+    main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    /* Ajustes para garantir que tudo seja visível */
+    header {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    footer {
+        margin-bottom: 1rem;
+        width: 100%;
     }
     
     /* Melhoria na visualização do contador */
@@ -957,7 +1008,7 @@ html, body {
     }
 }
 
-/* Otimizações específicas para iPhone e Android */
+/* Correções específicas para iPhone e Android */
 @media (max-width: 480px) {
     body {
         background-position: center center;
@@ -967,14 +1018,48 @@ html, body {
         position: relative;
     }
     
+    html, body {
+        overflow: auto;
+        position: relative;
+        height: auto;
+    }
+    
     .container {
         padding: 1rem 0.8rem;
         height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Garantir que a logo apareça completa */
+    .logo-text {
+        font-size: 2.2rem;
+        letter-spacing: 4px;
+        width: 100%;
+        display: block;
+        margin: 0 auto 0.5rem;
+    }
+    
+    .logo-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    
+    /* Ajuste para o conteúdo principal */
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     /* Melhorar a visualização do fundo */
     .overlay {
         background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+        position: fixed;
     }
     
     /* Ajustes para o contador */
@@ -985,6 +1070,10 @@ html, body {
         margin: 1rem 0;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(5px);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .countdown-item {
@@ -1007,6 +1096,13 @@ html, body {
         border: 1px solid rgba(79, 172, 254, 0.2);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         padding: 1.2rem 1rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    form {
+        width: 100%;
     }
     
     input[type="email"] {
@@ -1023,9 +1119,21 @@ html, body {
         font-weight: 600;
     }
     
+    /* Ajuste para o rodapé */
+    footer {
+        width: 100%;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
     /* Melhorar a visualização das formas animadas */
     .shape {
         filter: blur(30px);
+    }
+    
+    /* Correção para o fundo */
+    .animated-shapes {
+        position: fixed;
     }
     
     /* Ajustes para orientação paisagem em dispositivos móveis */
@@ -1096,11 +1204,11 @@ html, body {
     }
 }
 
-/* Correções para dispositivos iOS específicos */
+/* Correções para dispositivos iOS */
 @supports (-webkit-touch-callout: none) {
     body {
         background-attachment: scroll; /* Corrige problemas de background-attachment: fixed no iOS */
-        height: -webkit-fill-available;
+        min-height: -webkit-fill-available;
     }
     
     html {
