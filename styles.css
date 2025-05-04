@@ -13,15 +13,20 @@
     --background-light: rgba(255, 255, 255, 0.1);
 }
 
-body {
-    font-family: 'Raleway', 'Montserrat', sans-serif;
+html {
+    height: 100%;
     background-image: url('I Know I Am..gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+body {
+    font-family: 'Raleway', 'Montserrat', sans-serif;
+    background: transparent; /* Removido o background do body */
     color: var(--text-color);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -932,12 +937,17 @@ html, body {
 
 /* Otimização para dispositivos móveis - Correção 2024 */
 @media (max-width: 768px) {
-    body {
+    html {
         background-attachment: scroll; /* Melhora o desempenho em dispositivos móveis */
-        background-position: center center;
-        background-size: cover;
+        height: 100%;
         overflow-y: auto;
+    }
+    
+    body {
+        background: transparent;
+        min-height: 100vh;
         height: auto;
+        overflow-y: auto;
         position: relative;
     }
     
@@ -1222,8 +1232,13 @@ html, body {
 
 /* Correções para dispositivos iOS */
 @supports (-webkit-touch-callout: none) {
-    body {
+    html {
         background-attachment: scroll; /* Corrige problemas de background-attachment: fixed no iOS */
+        -webkit-background-size: cover;
+        height: -webkit-fill-available;
+    }
+    
+    body {
         min-height: -webkit-fill-available;
     }
     
