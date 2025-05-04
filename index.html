@@ -8,12 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon para todos os dispositivos -->
+    <link rel="icon" type="image/png" href="NewLogo2-removebg-preview.png">
+    <link rel="apple-touch-icon" href="NewLogo2-removebg-preview.png">
+    <meta name="msapplication-TileImage" content="NewLogo2-removebg-preview.png">
+    
     <!-- Adicionar meta tags para SEO e compartilhamento social -->
     <meta name="description" content="ELVONO - Elevando Sua Visão a Novos Horizontes. Lançamento em 28 de agosto de 2024.">
     <meta property="og:title" content="ELVONO - Em Breve">
     <meta property="og:description" content="Elevando Sua Visão a Novos Horizontes. Lançamento em 28 de agosto de 2024.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
+    <meta property="og:image" content="NewLogo2-removebg-preview.png">
     <meta name="theme-color" content="#1a1a2e">
 </head>
 <body>
@@ -149,107 +156,6 @@
             const countdownInterval = setInterval(updateCountdown, 1000);
         });
     </script>
-
-    <style>
-        /* Estilo para animação dos números */
-        .countdown-item span {
-            transition: all 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            font-weight: 600;
-            color: #00bfff;
-            display: inline-block;
-            width: 5rem;
-            text-align: center;
-            line-height: 1;
-            margin: 0 0.5rem;
-        }
-        
-        .countdown-item .label {
-            font-size: 1rem;
-            font-weight: 400;
-            margin-top: 0.5rem;
-            width: auto;
-            color: #ffffff;
-        }
-        
-        .number-change {
-            animation: numberPulse 0.3s ease-in-out;
-            color: #00ffff !important;
-        }
-        
-        @keyframes numberPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Garantir que a contagem regressiva fique alinhada */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .countdown-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 1rem;
-        }
-        
-        /* Estilos responsivos para dispositivos móveis */
-        @media (max-width: 768px) {
-            .countdown {
-                margin: 1.5rem 0;
-            }
-            
-            .countdown-item span {
-                font-size: 2.2rem;
-                width: 3.5rem;
-                margin: 0 0.3rem;
-            }
-            
-            .countdown-item .label {
-                font-size: 0.8rem;
-            }
-            
-            .countdown-item {
-                margin: 0 0.5rem;
-            }
-        }
-        
-        /* Estilos para dispositivos muito pequenos */
-        @media (max-width: 480px) {
-            .countdown {
-                margin: 1rem 0;
-            }
-            
-            .countdown-item span {
-                font-size: 1.8rem;
-                width: 2.8rem;
-                margin: 0 0.2rem;
-            }
-            
-            .countdown-item .label {
-                font-size: 0.7rem;
-            }
-            
-            .countdown-item {
-                margin: 0 0.3rem;
-            }
-        }
-        
-        /* Estilos para dispositivos extremamente pequenos */
-        @media (max-width: 320px) {
-            .countdown-item span {
-                font-size: 1.5rem;
-                width: 2.2rem;
-            }
-        }
-    </style>
 
     <!-- Seus scripts personalizados - Importante: firebase-config.js deve vir antes de script.js -->
     <script src="firebase-config.js"></script>
