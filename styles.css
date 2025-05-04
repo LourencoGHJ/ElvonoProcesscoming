@@ -660,6 +660,22 @@ footer p {
     }
 }
 
+/* Ajustes para diferentes proporções de tela */
+@media (max-aspect-ratio: 9/16) {
+    .container {
+        justify-content: space-around;
+    }
+    
+    .countdown {
+        margin: 0.5rem 0;
+    }
+    
+    .newsletter {
+        margin: 0.5rem 0;
+        padding: 0.8rem;
+    }
+}
+
 /* Ajustes para orientação paisagem em dispositivos móveis */
 @media (max-height: 500px) and (max-width: 900px) {
     .logo-text {
